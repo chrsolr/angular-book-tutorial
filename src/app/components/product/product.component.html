@@ -1,0 +1,17 @@
+<div class="media">
+	<div class="media-left">
+		<a href="#">
+			<img class="media-object" [src]="data.imageUrl">
+    </a>
+	</div>
+	<div class="media-body">
+		<div class="media-object">
+			<h4 class="media-heading">{{ data.productName }}</h4>
+			{{ data.releasedDate }}
+			<rating [rating]="data.rating" [numberOfReviews]="data.numberOfReviews">
+			</rating>
+			<br>
+      {{ data.description }}
+		</div>
+		</div>
+	</div>
