@@ -6,7 +6,6 @@ import { ProductService } from '../../services/product.service'
   templateUrl: './products.component.html',
   providers: [ProductService],
 })
-
 export class ProductsComponent {
   products
 

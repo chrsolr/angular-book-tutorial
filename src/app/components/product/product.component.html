@@ -1,17 +1,24 @@
 <div class="media">
-	<div class="media-left">
-		<a href="#">
-			<img class="media-object" [src]="data.imageUrl">
+  <div class="media-left">
+    <a [href]="data.imageUrl" target="_blank">
+      <img class="media-object" [src]="data.imageUrl" />
     </a>
-	</div>
-	<div class="media-body">
-		<div class="media-object">
-			<h4 class="media-heading">{{ data.productName }}</h4>
-			{{ data.releasedDate }}
-			<rating [rating]="data.rating" [numberOfReviews]="data.numberOfReviews">
-			</rating>
-			<br>
+  </div>
+  <div class="media-body">
+    <div class="media-object">
+      <h4 class="media-heading">{{ data.productName }}</h4>
+      {{ data.releasedDate | date | uppercase }}
+      <rating [rating]="data.rating" [numberOfReviews]="data.numberOfReviews">
+      </rating>
+      <div [ngSwitch]="data.rating">
+        <div *ngSwitchCase="1">Poor</div>
+        <div *ngSwitchCase="2">Fair</div>
+        <div *ngSwitchCase="3">Good</div>
+        <div *ngSwitchCase="4">Very Good</div>
+        <div *ngSwitchCase="5">Excellent</div>
+        <div *ngSwitchCaseDefault>Not Rated</div>
+      </div>
       {{ data.description }}
-		</div>
-		</div>
-	</div>
+    </div>
+  </div>
+</div>

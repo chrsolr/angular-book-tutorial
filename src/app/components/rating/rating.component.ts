@@ -6,8 +6,8 @@ import { Component, Input } from '@angular/core'
   styleUrls: ['./rating.component.scss'],
 })
 export class RatingComponent {
-  @Input() rating: number = 0
-  @Input() numberOfReviews: number = 0
+  @Input() rating = 0
+  @Input() numberOfReviews = 0
 
   onClick(value) {
     this.rating = value
