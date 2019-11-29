@@ -3,10 +3,31 @@
   <form action="">
     <div class="form-group">
       <label for="firstName">First Name</label
-      ><input type="text" class="form-control" id="firstName" [(ngModel)]="model.firstName" name="firstName" required />
+      ><input
+        type="text"
+        class="form-control"
+        id="firstName"
+        [(ngModel)]="model.firstName"
+        name="firstName"
+        required
+        minlength="3"
+        #firstName="ngModel"
+      />
+      <div class="alert alert-danger" *ngIf="firstName.touched && firstName.errors">
+        <div class="alert alert-danger" *ngIf="firstName.errors.required">
+          First name required.
+        </div>
+        <div class="alert alert-danger" *ngIf="firstName.errors.minlength">
+          First name should be minimum 3 characters.
+        </div>
+      </div>
     </div>
     <div class="form-group">
-      <label for="email">Email</label><input type="text" class="form-control" id="email" [(ngModel)]="model.email" name="email" required />
+      <label for="email">Email</label
+      ><input type="text" class="form-control" id="email" [(ngModel)]="model.email" name="email" required #email="ngModel" />
+      <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+        Email name required.
+      </div>
     </div>
     <div class="form-group">
       <label for="country">Country</label>
