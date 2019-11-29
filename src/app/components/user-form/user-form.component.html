@@ -1,12 +1,16 @@
 <div>
   <h1></h1>
   <form action="">
-    <div class="form-goup"><label for="firstName">First Name</label><input type="text" class="form-control" id="firstName" required /></div>
-    <div class="form-goup"><label for="email">Email</label><input type="text" class="form-control" id="email" required /></div>
-    <div class="form-goup">
+    <div class="form-group">
+      <label for="firstName">First Name</label
+      ><input type="text" class="form-control" id="firstName" [(ngModel)]="model.firstName" name="firstName" required />
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label><input type="text" class="form-control" id="email" [(ngModel)]="model.email" name="email" required />
+    </div>
+    <div class="form-group">
       <label for="country">Country</label>
-      <input type="text" class="form-control" id="country" required />
-      <select id="country" class="form-control">
+      <select id="country" class="form-control" [(ngModel)]="model.country" name="country">
         <option *ngFor="let c of countries" [value]="c">{{ c }}</option>
       </select>
     </div>

@@ -8,7 +8,7 @@ import { User } from 'src/app/models/user'
 })
 export class UserFormComponent implements OnInit {
   countries = ['USA', 'Singapore', 'Hong Kong', 'Australia']
-  model = new User('', '', '')
+  model = new User('Christian', 'Soler', 'chr.solr@gmail.com', 'USA')
   submitted = false
 
   constructor() {}
