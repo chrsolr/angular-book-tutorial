@@ -1,9 +1,11 @@
-<div class="media">
-  <img class="mr-3" [src]="data.imageUrl" />
-  <div class="media-body">
-    <h4 class="mt-0">{{ data.productName }}</h4>
-    {{ data.releasedDate | date | uppercase }}
-    <rating [rating]="data.rating" [numberOfReviews]="data.numberOfReviews"> </rating>
+<div class="card">
+  <img class="card-img-top" [src]="data.imageUrl" />
+  <div class="card-body">
+    <h5 class="card-title">{{ data.productName }}</h5>
+    <h6 class="card-subtitle text-muted mb-2">{{ data.releasedDate | date | uppercase }}</h6>
+    <p class="card-text">{{ data.description | truncate: 50 }}</p>
+
+    <rating [rating]="data.rating" [numberOfReviews]="data.numberOfReviews"></rating>
     <div [ngSwitch]="data.rating">
       <div *ngSwitchCase="1">Poor</div>
       <div *ngSwitchCase="2">Fair</div>
@@ -12,6 +14,5 @@
       <div *ngSwitchCase="5">Excellent</div>
       <div *ngSwitchCaseDefault>Not Rated</div>
     </div>
-    {{ data.description | truncate: 50 }}
   </div>
 </div>
