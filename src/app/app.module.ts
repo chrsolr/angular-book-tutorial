@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { HttpClientModule } from '@angular/common/http'
 
 import { TruncatePipe } from './pipes/truncate.pipe'
 
@@ -13,9 +14,13 @@ import { ProductComponent } from './components/product/product.component'
 import { BsJumbotronComponent } from './components/bs-jumbotron/bs-jumbotron.component'
 import { UserFormComponent } from './components/user-form/user-form.component'
 import { LoginComponent } from './components/login/login.component'
+import { HomeComponent } from './components/home/home.component'
+import { NotFoundComponent } from './components/not-found/not-found.component'
+import { routing } from './app.routing'
+import { GitHubComponent } from './components/git-hub/git-hub.component'
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, ReactiveFormsModule],
+  imports: [BrowserModule, FormsModule, ReactiveFormsModule, routing, HttpClientModule],
   bootstrap: [AppComponent],
   providers: [ProductService],
   declarations: [
@@ -27,6 +32,9 @@ import { LoginComponent } from './components/login/login.component'
     BsJumbotronComponent,
     UserFormComponent,
     LoginComponent,
+    HomeComponent,
+    NotFoundComponent,
+    GitHubComponent,
   ],
 })
 export class AppModule {}
