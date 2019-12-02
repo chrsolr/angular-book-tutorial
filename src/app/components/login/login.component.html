@@ -2,15 +2,25 @@
   <div class="form-group">
     <label for="username">Username</label>
     <input id="username" type="text" class="form-control" formControlName="username" />
-    <div class="alert alert-danger" *ngIf="form.controls.username.touched && !form.controls.username.valid">
-      Username required.
-    </div>
+    <div *ngIf="form.controls.username.touched && form.controls.username.errors">
+        <div class="alert alert-danger" *ngIf="form.controls.username.errors.required">
+          Username required.
+        </div>
+        <div class="alert alert-danger" *ngIf="form.controls.username.errors.cannotContainSpace">
+            Username cannot contain a space.
+        </div>
+      </div>
   </div>
   <div class="form-group">
     <label for="password">Password</label>
     <input id="password" type="password" class="form-control" formControlName="password" />
-    <div class="alert alert-danger" *ngIf="form.controls.password.touched && !form.controls.password.valid">
-      Password required.
+    <div *ngIf="form.controls.password.touched && form.controls.password.errors">
+      <div class="alert alert-danger" *ngIf="form.controls.password.errors.required">
+        Password required.
+      </div>
+      <div class="alert alert-danger" *ngIf="form.controls.password.errors.cannotContainSpace">
+        Password cannot contain a space.
+      </div>
     </div>
   </div>
   <button class="btn btn-primary" type="submit">Login</button>
