@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { TruncatePipe } from './pipes/truncate.pipe'
 
 import { ProductService } from './services/product.service'
+import { LoginService } from './services/login.service'
 
 import { AppComponent } from './app.component'
 import { RatingComponent } from './components/rating/rating.component'
@@ -22,7 +23,7 @@ import { GitHubComponent } from './components/git-hub/git-hub.component'
 @NgModule({
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, routing, HttpClientModule],
   bootstrap: [AppComponent],
-  providers: [ProductService],
+  providers: [ProductService, LoginService],
   declarations: [
     AppComponent,
     RatingComponent,

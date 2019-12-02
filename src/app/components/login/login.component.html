@@ -9,6 +9,9 @@
         <div class="alert alert-danger" *ngIf="form.controls.username.errors.cannotContainSpace">
             Username cannot contain a space.
         </div>
+        <div class="alert alert-danger" *ngIf="!form.controls.username.errors.invalidLogin || !form.controls.password.errors.invalidLogin">
+            Username or Password Invalid.
+        </div>
       </div>
   </div>
   <div class="form-group">
@@ -20,6 +23,9 @@
       </div>
       <div class="alert alert-danger" *ngIf="form.controls.password.errors.cannotContainSpace">
         Password cannot contain a space.
+      </div>
+      <div class="alert alert-danger" *ngIf="!form.controls.username.errors.invalidLogin || !form.controls.password.errors.invalidLogin">
+          Username or Password Invalid.
       </div>
     </div>
   </div>
