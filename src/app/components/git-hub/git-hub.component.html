@@ -1,1 +1,15 @@
-<p>git-hub works!</p>
+<input type="search" class="form-control" placeholder="Search for github user" [formControl]="searchControl" />
+
+<hr />
+
+<div *ngIf="isLoading"><i class="fa fa-spinner fa-spin fa-2x"></i></div>
+
+<div *ngFor="let user of users" class="shadow border p-3 mb-5 bg-white rounded">
+  <div class="media">
+    <img [src]="user.html_url" class="mr-3" />
+    <div class="media-body">
+      <h5 class="mt-0">{{ user.login }}</h5>
+      Score: {{ user.score }}
+    </div>
+  </div>
+</div>
