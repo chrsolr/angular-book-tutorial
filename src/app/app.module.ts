@@ -19,7 +19,8 @@ import { LoginComponent } from './components/login/login.component'
 import { HomeComponent } from './components/home/home.component'
 import { NotFoundComponent } from './components/not-found/not-found.component'
 import { routing } from './app.routing'
-import { GitHubComponent } from './components/git-hub/git-hub.component'
+import { GitHubComponent } from './components/git-hub/git-hub.component';
+import { GitHubUserComponent } from './components/git-hub-user/git-hub-user.component'
 
 @NgModule({
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, routing, HttpClientModule],
@@ -37,6 +38,7 @@ import { GitHubComponent } from './components/git-hub/git-hub.component'
     HomeComponent,
     NotFoundComponent,
     GitHubComponent,
+    GitHubUserComponent,
   ],
 })
 export class AppModule {}

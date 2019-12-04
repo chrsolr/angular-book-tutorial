@@ -1,0 +1,10 @@
+<div class="shadow border p-3 mb-5 bg-white rounded">
+  <div class="media">
+    <img [src]="user.avatar_url" class="mr-3 rounded shadow-sm border" />
+    <div class="media-body">
+      <h5 class="mt-0" title="{{ user.login }}">{{ user.login | truncate: 10 }}</h5>
+      <p class="text-muted font-weight-light">Score: {{ user.score }}</p>
+      <a class="font-weight-light" href="{{ user.html_url }}" target="_blank">View Github</a>
+    </div>
+  </div>
+</div>
